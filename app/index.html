@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./prd/styles/lib/style.css">
+</head>
+<body>
+	<div ng-controller="demo" class="search-list">
+		<input type="text" ng-model="searchTxt" placeholder="search firstName">
+		<input type="text" ng-model="searchTxt" placeholder="search lastName">
+		<table border="1">
+			<thead class="head-item">
+				<tr>
+					<td ng-click="addCls('first',$event)">firstName</td>
+					<td ng-click="addCls('last',$event)">lastName</td>
+					<td ng-click="addCls('Gender',$event)">Gender</td>
+					<td ng-click="addCls('Salary',$event)">Salary</td>
+					<td ng-click="addCls('Birthday',$event)">Birthday</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="list in lists | filter:searchTxt | orderBy:name">
+					<td>{{list.first | uppercase}}</td>
+					<td>{{list.last}}</td>
+					<td>{{list.Gender}}</td>
+					<td>￥{{list.Salary}}</td>
+					<td>{{list.Birthday | date:"yyyy-MM-dd"}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript" src="/app/libs/angular.min.js"></script>
+	<script type="text/javascript" src="/app/libs/jquery-1.8.3.js"></script>
+	<script type="text/javascript" src="/app/prd/scripts/app.js"></script>
+</body>
+</html>

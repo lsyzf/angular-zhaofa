@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./prd/styles/lib/style.css">
+</head>
+<body>
+	<!-- <div ng-controller="demo1">
+		<p>{{user[0].name}}</p>
+	</div>
+	<div ng-controller="demo1">
+		<ul>
+			<li ng-repeat="item in user">{{item.name}}</li>
+		</ul>
+	</div>
+	<div ng-controller="demo">
+	    <input type="text" ng-model="counter">
+	    <input type="button" value="+" ng-click="add()">
+	</div> 
+	<div ng-controller="demo">
+	    <label>请输入你感兴趣的课程:</label><input type="text" ng-model="item" ng-keyup="addItem($event)">
+	    <ul>
+	    	<li ng-repeat="item in items">
+	    		{{item}}
+	    	</li>
+	    </ul>
+	</div>
+	<div ng-controller="demo">
+		<p ng-show="isShow">是否显示</p>
+	</div> -->
+	<!-- <div ng-controller="demo">
+	    <p>结算: <span>￥{{price}}</span></p>
+	    <ul>
+	    	<li ng-repeat="b in book">
+	    		<p ng-class="{'title':b.publite}">{{b.bookName}}</p>
+	    		<p ng-class="{true:'enabled',false:'disabled'}[b.isHas]">有货</p>
+	    		<p>更新时间 <span>{{b.time | date:"yyyy年MM月dd日 HH:mm"}}</span></p>
+	    	</li>
+	    </ul>
+	</div>  -->
+	<div ng-controller="demo" class="search">
+		<input type="text" ng-model="searchTxt">
+		<table border="1">
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>name</td>
+					<td>phone</td>
+				</tr>
+			</thead>
+			{{firends.name}}
+			<tbody>
+				<tr ng-repeat="t in firends | filter:searchTxt">
+					<td>{{$index+1}}</td>
+					<td>{{t.name}}</td>
+					<td>{{t.phone}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript" src="/app/libs/angular.min.js"></script>
+	<script type="text/javascript" src="/app/prd/scripts/app.js"></script>
+</body>
+</html>
